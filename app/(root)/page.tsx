@@ -1,8 +1,19 @@
-const page = async () => {
-  
+import SearchForm from "@/components/SearchForm"
+
+const page = async ({ searchParams }:{searchParams: Promise<{ query?: string}>}) => {
+  const query = (await searchParams).query
+
 return (
   <>
-  <h1 className="text-2xl text-purple-600 font-bold text-center">Welcome Back Home!!</h1>
+  <section className="pink_container">
+  <h1 className="heading">
+    Pitch Your Project, <br /> Connect with Developers
+  </h1>
+  <p className="sub-heading !max-w-3xl">
+    Submit Ideas, Vote on Projects, and Collaborate with Developers to bring your project to life.
+  </p>
+  <SearchForm query={query}/>
+  </section>
   </>
 )
 }
