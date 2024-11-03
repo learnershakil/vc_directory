@@ -11,7 +11,8 @@ const nextConfig: NextConfig = {
       }
     ]},
     experimental: {
-      ppr: "incremental"
+      ppr: "incremental",
+      after: true // Enable the unstable_after feature
     },
     devIndicators: {
       appIsrStatus: true,
